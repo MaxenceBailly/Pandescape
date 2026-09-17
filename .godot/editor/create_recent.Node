@@ -1,10 +1,10 @@
+Timer
 AnimationPlayer
 AudioStreamPlayer2D
 Label
 Control
 Node
 RayCast2D
-Timer
 CollisionShape2D
 AnimatedSprite2D
 Node2D

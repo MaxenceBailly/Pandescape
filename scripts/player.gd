@@ -10,7 +10,14 @@ var is_rolling : bool = false
 var can_roll : bool = true
 @onready var dash_timer = $DashTimer
 @onready var dash_cooldown_timer = $DashCooldownTimer
-var panda_transformation : bool = true
+var panda_spirit_mod : bool = false
+var is_animation_locked : bool = false
+
+func play_special_animation(animation : String) :
+	is_animation_locked = true
+	animated_sprite.play(animation)
+	await animated_sprite.animation_finished
+	is_animation_locked = false
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
@@ -26,6 +33,7 @@ func _physics_process(delta: float) -> void:
 		dash_cooldown_timer.start()
 		is_rolling = true
 		can_roll = false
+		play_special_animation("dash_roll")
 
 	var direction := Input.get_axis("move_left", "move_right")
 	if direction:
@@ -38,17 +46,14 @@ func _physics_process(delta: float) -> void:
 	elif direction < 0:
 		facing_direction = true
 	
-	if is_on_floor():
-		if direction == 0:
-			animated_sprite.play("idle")
+	if !is_animation_locked:
+		if is_on_floor():
+			if direction == 0:
+				animated_sprite.play("idle")
+			else:
+				animated_sprite.play("run")
 		else:
-			animated_sprite.play("run")
-	else:
-		animated_sprite.play("jump")
-		
-	if is_rolling:
-		print("rolling")
-		animated_sprite.play("dash_roll")
+			animated_sprite.play("jump")
 		
 	if is_rolling:
 		velocity.x = (-1 if facing_direction else 1) * SPEED*2

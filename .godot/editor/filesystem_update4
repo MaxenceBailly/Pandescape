@@ -1,4 +1,5 @@
-res://scenes/game.tscn
-res://scripts/game_manager.gd
-res://scenes/player.tscn
 res://scripts/player.gd
+res://scenes/game.tscn
+res://scenes/player.tscn
+res://scenes/bamboo.tscn
+res://scripts/bamboo.gd

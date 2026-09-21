@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://b36muknm2j1dm"]
+
+[ext_resource type="Script" uid="uid://mco1muwopdvr" path="res://scripts/bamboo.gd" id="1_4fja5"]
+[ext_resource type="Texture2D" uid="uid://k3gxqbwp1bci" path="res://assets/sprites/world_tileset.png" id="2_lw0q1"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ri7g6"]
+size = Vector2(14, 12)
+
+[node name="Bamboo" type="Node2D" unique_id=1969219771]
+script = ExtResource("1_4fja5")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1055144482]
+texture = ExtResource("2_lw0q1")
+region_enabled = true
+region_rect = Rect2(145, 52, 14, 12)
+
+[node name="Area2D" type="Area2D" parent="." unique_id=410732057]
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=534824587]
+shape = SubResource("RectangleShape2D_ri7g6")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

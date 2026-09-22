@@ -10,6 +10,7 @@
 [ext_resource type="FontFile" uid="uid://d3puh7dkgs54e" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="7_u5sy4"]
 [ext_resource type="PackedScene" uid="uid://dsnlolyd8yigc" path="res://scenes/music.tscn" id="9_0tnpc"]
 [ext_resource type="PackedScene" uid="uid://b36muknm2j1dm" path="res://scenes/bamboo.tscn" id="10_vtaks"]
+[ext_resource type="PackedScene" uid="uid://dp053vbrjh7j3" path="res://scenes/nightmares.tscn" id="11_kvpfn"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lnu2h"]
 texture = ExtResource("2_yqjtg")
@@ -314,3 +315,6 @@ position = Vector2(-2024, -30)
 
 [node name="Bamboo4" parent="." unique_id=115516843 instance=ExtResource("10_vtaks")]
 position = Vector2(-2024, -42)
+
+[node name="Nightmares" parent="." unique_id=196581275 instance=ExtResource("11_kvpfn")]
+position = Vector2(-2444, -62)

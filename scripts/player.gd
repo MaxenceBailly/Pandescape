@@ -3,7 +3,7 @@ extends CharacterBody2D
 
 const SPEED = 150.0
 const JUMP_VELOCITY = -300.0
-const CLIMBING_SPEED = 50
+const CLIMBING_SPEED = 150
 
 @onready var animated_sprite = $AnimatedSprite2D
 var facing_direction = false

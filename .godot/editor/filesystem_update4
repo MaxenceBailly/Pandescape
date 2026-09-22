@@ -3,3 +3,6 @@ res://scripts/player.gd
 res://scripts/bamboo.gd
 res://scenes/player.tscn
 res://scenes/platform.tscn
+res://scenes/nightmares.tscn
+res://scripts/nightmares.gd
+res://scenes/game.tscn

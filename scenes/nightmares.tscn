@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://dp053vbrjh7j3"]
+
+[ext_resource type="Texture2D" uid="uid://cap6is1x1gfo4" path="res://icon.svg" id="1_c8t5l"]
+[ext_resource type="Script" uid="uid://df2uhgw3uyghl" path="res://scripts/nightmares.gd" id="1_gvb0x"]
+[ext_resource type="PackedScene" uid="uid://ivsejqw6qmgi" path="res://scenes/killzone.tscn" id="2_38owp"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gvb0x"]
+size = Vector2(129, 128)
+
+[node name="Nightmares" type="Node2D" unique_id=196581275]
+script = ExtResource("1_gvb0x")
+
+[node name="Killzone" parent="." unique_id=64372530 instance=ExtResource("2_38owp")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Killzone" unique_id=1948617738]
+position = Vector2(-0.5, -1)
+shape = SubResource("RectangleShape2D_gvb0x")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=23843362]
+texture = ExtResource("1_c8t5l")

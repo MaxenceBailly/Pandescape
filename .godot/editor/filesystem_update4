@@ -1,5 +1,5 @@
+res://scenes/killzone.tscn
 res://scripts/player.gd
-res://scenes/game.tscn
-res://scenes/player.tscn
-res://scenes/bamboo.tscn
 res://scripts/bamboo.gd
+res://scenes/player.tscn
+res://scenes/platform.tscn

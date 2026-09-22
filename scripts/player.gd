@@ -1,3 +1,4 @@
+class_name Player
 extends CharacterBody2D
 
 const SPEED = 150.0
@@ -12,7 +13,7 @@ var can_roll : bool = true
 @onready var dash_cooldown_timer = $DashCooldownTimer
 var panda_spirit_mod : bool = false
 var is_animation_locked : bool = false
-var is_climbing_bamboo : bool = false
+var bamboo_climbing_list : Array[Bamboo] = []
 
 func play_special_animation(animation : String) :
 	is_animation_locked = true
@@ -70,15 +71,16 @@ func _physics_process(delta: float) -> void:
 		
 	animated_sprite.flip_h = facing_direction
 	
-	if is_climbing_bamboo:
+	if !bamboo_climbing_list.is_empty():
 		velocity.y = -CLIMBING_SPEED
 	
 	move_and_slide()
 
-func set_player_on_bamboo(value: bool) -> void:
-	if value == true and is_climbing_bamboo == true: pass
-	is_climbing_bamboo=value
-	print(is_climbing_bamboo)
+func add_bamboo_to_list(object: Bamboo) -> void:
+	bamboo_climbing_list.append(object)
+	
+func remove_bamboo_from_list(object: Bamboo) -> void:
+	bamboo_climbing_list.erase(object)
 
 func _on_dash_timer_timeout() -> void:
 	is_rolling = false
